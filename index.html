@@ -20,6 +20,9 @@
       font-size: 14px;
       transition: opacity 0.3s;
     }
+     /* Carousel-specific styles */
+     .carousel-item { display: none; }
+    .carousel-item.active { display: block; }
   </style>
 </head>
 <body class="bg-gray-100">
@@ -78,34 +81,42 @@
               </div>
             </div>
     
-            <!-- Experience Carousel -->
-            <div class="mt-10">
-              <h2 class="text-2xl font-bold mb-4">Experience</h2>
-              <div id="carousel" class="relative">
-                <div class="carousel-item active bg-white p-6 rounded-lg shadow-md text-center">
-                  <h3 class="text-xl font-semibold">Massachusetts General Hospital</h3>
-                  <p class="text-gray-600 mt-2">Work Control Associate (Jan 2022 - Current)</p>
-                  <p class="mt-2">Managed work requests, dispatched maintenance tasks, and maintained inventory systems.</p>
-                </div>
-                <div class="carousel-item bg-white p-6 rounded-lg shadow-md text-center">
-                  <h3 class="text-xl font-semibold">Hope Initiative</h3>
-                  <p class="text-gray-600 mt-2">Math Gateway Specialist (Dec 2022 – May 2024)</p>
-                  <p class="mt-2">Provided mentoring support, conducted tutoring sessions, and fostered a supportive environment.</p>
-                </div>
-                <div class="carousel-item bg-white p-6 rounded-lg shadow-md text-center">
-                  <h3 class="text-xl font-semibold">Northeastern University (REU)</h3>
-                  <p class="text-gray-600 mt-2">Intern (May 2023 - Aug 2023)</p>
-                  <p class="mt-2">Conducted urban air quality research, analyzed data, and documented findings.</p>
-                </div>
-                
-                <!-- Carousel Controls -->
-                <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 p-2 text-gray-600 hover:text-blue-600">
-                  &lt;
-                </button>
-                <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 text-gray-600 hover:text-blue-600">
-                  &gt;
-                </button>
-              </div>
+ <!-- Experience Carousel -->
+<div class="mt-10">
+    <h2 class="text-2xl font-bold mb-4">Experience</h2>
+    <div id="carousel" class="relative flex items-center space-x-4 overflow-x-auto">
+      
+      <!-- Carousel Items -->
+      <div class="carousel-item active bg-white p-4 rounded-lg shadow-md w-80">
+        <h3 class="text-xl font-semibold">Massachusetts General Hospital</h3>
+        <p class="text-gray-600 mt-2">Work Control Associate (Jan 2022 - Current)</p>
+        <p class="mt-2">Managed work requests, dispatched maintenance tasks, and maintained inventory systems.</p>
+      </div>
+      <div class="carousel-item bg-white p-4 rounded-lg shadow-md w-80">
+        <h3 class="text-xl font-semibold">Hope Initiative</h3>
+        <p class="text-gray-600 mt-2">Math Gateway Specialist (Dec 2022 – May 2024)</p>
+        <p class="mt-2">Provided mentoring support, conducted tutoring sessions, and fostered a supportive environment.</p>
+      </div>
+      <div class="carousel-item bg-white p-4 rounded-lg shadow-md w-80">
+        <h3 class="text-xl font-semibold">Northeastern University (REU)</h3>
+        <p class="text-gray-600 mt-2">Intern (May 2023 - Aug 2023)</p>
+        <p class="mt-2">Conducted urban air quality research, analyzed data, and documented findings.</p>
+      </div>
+      
+      <!-- Carousel Controls -->
+      <a id="prev" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-300 p-2 rounded-full shadow-lg focus:outline-none">
+        <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M12.293 15.707a1 1 0 01-1.414 0L5.293 10.707a1 1 0 010-1.414L10.879 3.879a1 1 0 011.415 1.415L7.414 10l5.293 5.293a1 1 0 010 1.414z" clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <a id="next" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-300 p-2 rounded-full shadow-lg focus:outline-none">
+        <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M7.707 4.293a1 1 0 010 1.414L3.414 10l4.293 4.293a1 1 0 01-1.415 1.415L.707 10.707a1 1 0 010-1.414L6.293 3.293a1 1 0 011.414 1.414z" clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  
             </div>
           </section>
       
@@ -165,5 +176,19 @@
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+
+  // JavaScript for Carousel Controls
+const carousel = document.getElementById('carousel');
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
+
+prevButton.addEventListener('click', () => {
+  carousel.scrollBy({ left: -300, behavior: 'smooth' });
+});
+
+nextButton.addEventListener('click', () => {
+  carousel.scrollBy({ left: 300, behavior: 'smooth' });
+});
+
 </script>
 </html>
