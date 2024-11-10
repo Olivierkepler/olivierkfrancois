@@ -113,7 +113,7 @@
                         <button id="tab6-btn" onclick="openTab('tab6')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Maintenance</button>
                     </div>
                     <!-- Indicator Bar -->
-                    <div id="tab-indicator" class="absolute bottom-0 left-0 h-1 bg-blue-500 transition-all duration-300" style="width: 16.666%;"></div>
+                    <!-- <div id="tab-indicator" class="absolute bottom-0 left-0 h-1 bg-blue-500 transition-all duration-300" style="width: 16.666%;"></div> -->
                 </div>
         
                 <!-- Tab Content -->
@@ -213,9 +213,9 @@ const tabButtons = document.querySelectorAll(".tab-button");
             activeButton.classList.add("text-blue-500", "font-semibold");
 
             // Move indicator bar
-            const index = Array.from(tabButtons).indexOf(activeButton);
-            indicator.style.width = `${200 / tabButtons.length}%`;
-            indicator.style.transform = `translateX(${index * 200 / tabButtons.length}%)`;
+            // const index = Array.from(tabButtons).indexOf(activeButton);
+            // indicator.style.width = `${200 / tabButtons.length}%`;
+            // indicator.style.transform = `translateX(${index * 200 / tabButtons.length}%)`;
         }
 
         // Set default active tab on page load
