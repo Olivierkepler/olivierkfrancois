@@ -64,20 +64,50 @@
 
     <!-- Main Section -->
     <main class="flex-1 p-4">
-       <!-- About Section with Image -->
-       <section id="about" class="my-10 text-center">
-        <div class="flex flex-col items-center lg:flex-row lg:items-center lg:space-x-8">
-          <!-- Profile Image -->
-          <img src="images/me2.jpeg" alt="Olivier Kepler François" class="w-40 h-40 rounded-full shadow-lg mb-4 lg:mb-0 lg:w-48 lg:h-48">
-          
-          <!-- About Text -->
-          <div>
-            <h1 class="text-4xl font-bold">Olivier Kepler François</h1>
-            <p class="text-lg text-gray-600 mt-4">Computer Science Engineer</p>
-            <p class="mt-4 max-w-lg">Diligent and highly motivated, pursuing a Bachelor's in Computer Science. Passionate about leveraging technical skills to address real-world challenges.</p>
-          </div>
-        </div>
-      </section>
+          <!-- About Section with Image -->
+          <section id="about" class="my-10 text-center">
+            <div class="flex flex-col items-center lg:flex-row lg:items-center lg:space-x-8">
+              <!-- Profile Image -->
+              <img src="images/me2.jpeg" alt="Olivier Kepler François" class="w-40 h-40 rounded-full shadow-lg mb-4 lg:mb-0 lg:w-48 lg:h-48">
+              
+              <!-- About Text -->
+              <div>
+                <h1 class="text-4xl font-bold">Olivier Kepler François</h1>
+                <p class="text-lg text-gray-600 mt-4">Computer Science Engineer</p>
+                <p class="mt-4 max-w-lg">Diligent and highly motivated, pursuing a Bachelor's in Computer Science. Passionate about leveraging technical skills to address real-world challenges.</p>
+              </div>
+            </div>
+    
+            <!-- Experience Carousel -->
+            <div class="mt-10">
+              <h2 class="text-2xl font-bold mb-4">Experience</h2>
+              <div id="carousel" class="relative">
+                <div class="carousel-item active bg-white p-6 rounded-lg shadow-md text-center">
+                  <h3 class="text-xl font-semibold">Massachusetts General Hospital</h3>
+                  <p class="text-gray-600 mt-2">Work Control Associate (Jan 2022 - Current)</p>
+                  <p class="mt-2">Managed work requests, dispatched maintenance tasks, and maintained inventory systems.</p>
+                </div>
+                <div class="carousel-item bg-white p-6 rounded-lg shadow-md text-center">
+                  <h3 class="text-xl font-semibold">Hope Initiative</h3>
+                  <p class="text-gray-600 mt-2">Math Gateway Specialist (Dec 2022 – May 2024)</p>
+                  <p class="mt-2">Provided mentoring support, conducted tutoring sessions, and fostered a supportive environment.</p>
+                </div>
+                <div class="carousel-item bg-white p-6 rounded-lg shadow-md text-center">
+                  <h3 class="text-xl font-semibold">Northeastern University (REU)</h3>
+                  <p class="text-gray-600 mt-2">Intern (May 2023 - Aug 2023)</p>
+                  <p class="mt-2">Conducted urban air quality research, analyzed data, and documented findings.</p>
+                </div>
+                
+                <!-- Carousel Controls -->
+                <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 p-2 text-gray-600 hover:text-blue-600">
+                  &lt;
+                </button>
+                <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 text-gray-600 hover:text-blue-600">
+                  &gt;
+                </button>
+              </div>
+            </div>
+          </section>
       
             <!-- About Section -->
       <section id="about" class="my-10 text-center">
