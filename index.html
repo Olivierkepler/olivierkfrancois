@@ -20,13 +20,7 @@
       font-size: 14px;
       transition: opacity 0.3s;
     }
-      /* Basic Carousel Styles */
-  .experience-carousel .carousel-item {
-    display: none;
-  }
-  .experience-carousel .carousel-item.active {
-    display: block;
-  }
+    
   </style>
 </head>
 <body class="bg-gray-100">
@@ -88,40 +82,6 @@
            
             </div>
           </section>
-        <section>
-            <!-- Carousel Component Start -->
-<div class="experience-carousel mt-10">
-    <h2 class="text-2xl font-bold mb-4">Experience</h2>
-    <div id="experience-carousel" class="relative flex items-center space-x-4 overflow-hidden">
-      
-      <!-- Carousel Items -->
-      <div class="carousel-item bg-white p-6 rounded-lg shadow-md w-72 text-center active">
-        <h3 class="text-xl font-semibold">Massachusetts General Hospital</h3>
-        <p class="text-gray-600 mt-2">Work Control Associate (Jan 2022 - Current)</p>
-        <p class="mt-2">Managed work requests, dispatched maintenance tasks, and maintained inventory systems.</p>
-      </div>
-      <div class="carousel-item bg-white p-6 rounded-lg shadow-md w-72 text-center">
-        <h3 class="text-xl font-semibold">Hope Initiative</h3>
-        <p class="text-gray-600 mt-2">Math Gateway Specialist (Dec 2022 – May 2024)</p>
-        <p class="mt-2">Provided mentoring support, conducted tutoring sessions, and fostered a supportive environment.</p>
-      </div>
-      <div class="carousel-item bg-white p-6 rounded-lg shadow-md w-72 text-center">
-        <h3 class="text-xl font-semibold">Northeastern University (REU)</h3>
-        <p class="text-gray-600 mt-2">Intern (May 2023 - Aug 2023)</p>
-        <p class="mt-2">Conducted urban air quality research, analyzed data, and documented findings.</p>
-      </div>
-  
-      <!-- Carousel Controls -->
-      <button id="carousel-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-300 p-2 rounded-full shadow-lg focus:outline-none hover:bg-gray-400 transition-colors">
-        &lt;
-      </button>
-      <button id="carousel-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-300 p-2 rounded-full shadow-lg focus:outline-none hover:bg-gray-400 transition-colors">
-        &gt;
-      </button>
-    </div>
-  </div>
-  <!-- Carousel Component End -->
-        </section>
       
             <!-- About Section -->
       <section id="about" class="my-10 text-center">
@@ -179,21 +139,5 @@
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-
-   // JavaScript for Carousel
-   const carouselItems = document.querySelectorAll('.experience-carousel .carousel-item');
-  let currentCarouselIndex = 0;
-
-  document.getElementById('carousel-next').addEventListener('click', () => {
-    carouselItems[currentCarouselIndex].classList.remove('active');
-    currentCarouselIndex = (currentCarouselIndex + 1) % carouselItems.length;
-    carouselItems[currentCarouselIndex].classList.add('active');
-  });
-
-  document.getElementById('carousel-prev').addEventListener('click', () => {
-    carouselItems[currentCarouselIndex].classList.remove('active');
-    currentCarouselIndex = (currentCarouselIndex - 1 + carouselItems.length) % carouselItems.length;
-    carouselItems[currentCarouselIndex].classList.add('active');
-  });
 </script>
 </html>
