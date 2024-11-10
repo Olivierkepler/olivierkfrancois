@@ -21,8 +21,8 @@
       transition: opacity 0.3s;
     }
 
-    /* Additional styling for smooth indicator movement and active tab button */
-    .tab-button {
+   /* Additional styling for smooth indicator movement and active tab button */
+   .tab-button {
             flex: 1;
             text-align: center;
             cursor: pointer;
@@ -103,17 +103,18 @@
                 <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Our Projects</h2>
                 
                 <!-- Tab Buttons with Indicator -->
-                <div class="flex border-b border-gray-200 overflow-x-auto">
-                    <button id="tab1-btn" onclick="openTab('tab1')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Overview</button>
-                    <button id="tab2-btn" onclick="openTab('tab2')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Development</button>
-                    <button id="tab3-btn" onclick="openTab('tab3')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Launch</button>
-                    <button id="tab4-btn" onclick="openTab('tab4')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Design</button>
-                    <button id="tab5-btn" onclick="openTab('tab5')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Testing</button>
-                    <button id="tab6-btn" onclick="openTab('tab6')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Maintenance</button>
+                <div class="relative">
+                    <div class="flex border-b border-gray-200 overflow-x-auto">
+                        <button id="tab1-btn" onclick="openTab('tab1')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Overview</button>
+                        <button id="tab2-btn" onclick="openTab('tab2')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Development</button>
+                        <button id="tab3-btn" onclick="openTab('tab3')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Launch</button>
+                        <button id="tab4-btn" onclick="openTab('tab4')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Design</button>
+                        <button id="tab5-btn" onclick="openTab('tab5')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Testing</button>
+                        <button id="tab6-btn" onclick="openTab('tab6')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Maintenance</button>
+                    </div>
+                    <!-- Indicator Bar -->
+                    <div id="tab-indicator" class="absolute bottom-0 left-0 h-1 bg-blue-500 transition-all duration-300" style="width: 16.666%;"></div>
                 </div>
-        
-                <!-- Indicator Bar -->
-                <div id="tab-indicator" class="h-1 w-1/6 bg-blue-500 transition-all duration-300" style="transform: translateX(0);"></div>
         
                 <!-- Tab Content -->
                 <div id="tab1" class="tab-content mt-8 hidden">
@@ -135,7 +136,6 @@
                     <p class="text-gray-700 leading-relaxed">Here we cover maintenance plans, post-launch support, and updates to ensure the project remains robust and relevant.</p>
                 </div>
             </div>
-            
           </section>
 
       
