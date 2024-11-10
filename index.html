@@ -49,37 +49,50 @@
   </header>
 
 
-  <!-- Main Section -->
-  <main class="flex-1 p-4">
-    <!-- About Section -->
-    <section id="about" class="my-10 text-center">
-      <h1 class="text-4xl font-bold">Olivier Kepler François</h1>
-      <p class="text-lg text-gray-600 mt-4">Computer Science Engineer</p>
-      <p class="mt-4">Diligent and highly motivated, pursuing a Bachelor's in Computer Science. Passionate about leveraging technical skills to address real-world challenges.</p>
-    </section>
+  <!-- Main Content with Sidebar -->
+  <div class="container mx-auto flex flex-col lg:flex-row p-4">
+    
+    <!-- Sidebar -->
+    <aside class="hidden lg:block w-1/4 bg-gray-200 p-4 rounded-lg shadow-md">
+      <h2 class="text-xl font-bold mb-4">Navigation</h2>
+      <nav class="flex flex-col space-y-2">
+        <a href="#about" class="text-gray-600 hover:text-blue-600">About</a>
+        <a href="#projects" class="text-gray-600 hover:text-blue-600">Projects</a>
+        <a href="#contact" class="text-gray-600 hover:text-blue-600">Contact</a>
+      </nav>
+    </aside>
 
-    <!-- Projects Section -->
-    <section id="projects" class="my-10">
-      <h2 class="text-3xl font-bold text-center">Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
-        <!-- Example Project Card -->
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-2xl font-bold">Project Title</h3>
-          <p class="mt-2 text-gray-600">Brief description of the project. This can include technologies used and purpose.</p>
-          <a href="#" class="text-blue-600 hover:underline mt-4 block">View Project</a>
+    <!-- Main Section -->
+    <main class="flex-1 p-4">
+      <!-- About Section -->
+      <section id="about" class="my-10 text-center">
+        <h1 class="text-4xl font-bold">Olivier Kepler François</h1>
+        <p class="text-lg text-gray-600 mt-4">Computer Science Engineer</p>
+        <p class="mt-4">Diligent and highly motivated, pursuing a Bachelor's in Computer Science. Passionate about leveraging technical skills to address real-world challenges.</p>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="my-10">
+        <h2 class="text-3xl font-bold text-center">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
+          <!-- Example Project Card -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-2xl font-bold">Project Title</h3>
+            <p class="mt-2 text-gray-600">Brief description of the project. This can include technologies used and purpose.</p>
+            <a href="#" class="text-blue-600 hover:underline mt-4 block">View Project</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="my-10 text-center">
-      <h2 class="text-3xl font-bold">Contact</h2>
-      <p class="mt-4">Email: <a href="mailto:olivierkfrancois1@gmail.com" class="text-blue-600">olivierkfrancois1@gmail.com</a></p>
-      <p class="mt-2">LinkedIn: <a href="https://www.linkedin.com/in/olivier-kepler-francois-97682a1a3" class="text-blue-600">Olivier Kepler François</a></p>
-      <p class="mt-2">GitHub: <a href="https://github.com/Olivierkepler" class="text-blue-600">github.com/Olivierkepler</a></p>
-    </section>
-  </main>
-
+      <!-- Contact Section -->
+      <section id="contact" class="my-10 text-center">
+        <h2 class="text-3xl font-bold">Contact</h2>
+        <p class="mt-4">Email: <a href="mailto:olivierkfrancois1@gmail.com" class="text-blue-600">olivierkfrancois1@gmail.com</a></p>
+        <p class="mt-2">LinkedIn: <a href="https://www.linkedin.com/in/olivier-kepler-francois-97682a1a3" class="text-blue-600">Olivier Kepler François</a></p>
+        <p class="mt-2">GitHub: <a href="https://github.com/Olivierkepler" class="text-blue-600">github.com/Olivierkepler</a></p>
+      </section>
+    </main>
+  </div>
 
 
   <!-- Go to Top Button -->
