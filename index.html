@@ -208,11 +208,43 @@
 
       <!-- Contact Section -->
       <section id="contact" class="my-10 text-center">
-        <h2 class="text-3xl font-bold">Contact</h2>
-        <p class="mt-4">Email: <a href="mailto:olivierkfrancois1@gmail.com" class="text-blue-600">olivierkfrancois1@gmail.com</a></p>
-        <p class="mt-2">LinkedIn: <a href="https://www.linkedin.com/in/olivier-kepler-francois-97682a1a3" class="text-blue-600">Olivier Kepler François</a></p>
-        <p class="mt-2">GitHub: <a href="https://github.com/Olivierkepler" class="text-blue-600">github.com/Olivierkepler</a></p>
-      </section>
+         <!-- Contact Form Container -->
+    <div class="w-full max-w-lg bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Contact Us</h2>
+        
+        <!-- Form Start -->
+        <form action="#" method="POST" class="space-y-4">
+            <!-- Name Field -->
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-600">Full Name</label>
+                <input type="text" id="name" name="name" required
+                    class="w-full p-3 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+
+            <!-- Email Field -->
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-600">Email Address</label>
+                <input type="email" id="email" name="email" required
+                    class="w-full p-3 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+
+            <!-- Message Field -->
+            <div>
+                <label for="message" class="block text-sm font-medium text-gray-600">Message</label>
+                <textarea id="message" name="message" rows="5" required
+                    class="w-full p-3 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="flex justify-end">
+                <button type="submit" class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    Send Message
+                </button>
+            </div>
+        </form>
+        <!-- Form End -->
+    </div>
+        </section>
     </main>
   </div>
 </div>
