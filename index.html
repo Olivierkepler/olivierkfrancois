@@ -20,7 +20,6 @@
       font-size: 14px;
       transition: opacity 0.3s;
     }
-    
   </style>
 </head>
 <body class="bg-gray-100">
@@ -79,7 +78,34 @@
               </div>
             </div>
     
-           
+            <!-- Experience Carousel -->
+            <div class="mt-10">
+              <h2 class="text-2xl font-bold mb-4">Experience</h2>
+              <div id="carousel" class="relative">
+                <div class="carousel-item active bg-white p-6 rounded-lg shadow-md text-center">
+                  <h3 class="text-xl font-semibold">Massachusetts General Hospital</h3>
+                  <p class="text-gray-600 mt-2">Work Control Associate (Jan 2022 - Current)</p>
+                  <p class="mt-2">Managed work requests, dispatched maintenance tasks, and maintained inventory systems.</p>
+                </div>
+                <div class="carousel-item bg-white p-6 rounded-lg shadow-md text-center">
+                  <h3 class="text-xl font-semibold">Hope Initiative</h3>
+                  <p class="text-gray-600 mt-2">Math Gateway Specialist (Dec 2022 – May 2024)</p>
+                  <p class="mt-2">Provided mentoring support, conducted tutoring sessions, and fostered a supportive environment.</p>
+                </div>
+                <div class="carousel-item bg-white p-6 rounded-lg shadow-md text-center">
+                  <h3 class="text-xl font-semibold">Northeastern University (REU)</h3>
+                  <p class="text-gray-600 mt-2">Intern (May 2023 - Aug 2023)</p>
+                  <p class="mt-2">Conducted urban air quality research, analyzed data, and documented findings.</p>
+                </div>
+                
+                <!-- Carousel Controls -->
+                <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 p-2 text-gray-600 hover:text-blue-600">
+                  &lt;
+                </button>
+                <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 text-gray-600 hover:text-blue-600">
+                  &gt;
+                </button>
+              </div>
             </div>
           </section>
       
@@ -112,6 +138,7 @@
       </section>
     </main>
   </div>
+</div>
 
 
   <!-- Go to Top Button -->
