@@ -6,7 +6,7 @@
   <title>Olivier Kepler François | Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    /* Optional styling for the Go to Top button */
+    /* Go to Top button styling */
     #go-to-top {
       position: fixed;
       bottom: 30px;
@@ -20,10 +20,10 @@
       font-size: 14px;
       transition: opacity 0.3s;
     }
-        /* Carousel-specific styles */
-        .carousel-item { display: none; }
-    .carousel-item.active { display: block; }
 
+    /* Carousel-specific styles */
+    .carousel-item { display: none; }
+    .carousel-item.active { display: block; }
   </style>
 </head>
 <body class="bg-gray-100">
@@ -31,7 +31,7 @@
   <!-- Navbar -->
   <header class="bg-white shadow-md">
     <div class="container mx-auto flex items-center justify-between px-4 py-3">
-      <div class="text-lg font-bold">Olivier K Francois </div>
+      <div class="text-lg font-bold">Olivier K Francois</div>
       <a id="menu-btn" class="block lg:hidden focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -52,7 +52,6 @@
     </div>
   </header>
 
-
   <!-- Main Content with Sidebar -->
   <div class="container mx-auto flex flex-col lg:flex-row p-4">
     
@@ -68,70 +67,56 @@
 
     <!-- Main Section -->
     <main class="flex-1 p-4">
-          <!-- About Section with Image -->
-          <section id="about" class="my-10 text-center">
-            <div class="flex flex-col items-center lg:flex-row lg:items-center lg:space-x-8">
-              <!-- Profile Image -->
-              <img src="images/me2.jpeg" alt="Olivier Kepler François" class="w-40 h-40 rounded-full shadow-lg mb-4 lg:mb-0 lg:w-48 lg:h-48">
-              
-              <!-- About Text -->
-              <div>
-                <h1 class="text-4xl font-bold">Olivier Kepler François</h1>
-                <p class="text-lg text-gray-600 mt-4">Computer Science Engineer</p>
-                <p class="mt-4 max-w-lg">Diligent and highly motivated, pursuing a Bachelor's in Computer Science. Passionate about leveraging technical skills to address real-world challenges.</p>
+      <!-- About Section with Image and Carousel -->
+      <section id="about" class="my-10 text-center">
+        <div class="flex flex-col items-center lg:flex-row lg:items-center lg:space-x-8">
+          <!-- Profile Image -->
+          <img src="images/me2.jpeg" alt="Olivier Kepler François" class="w-40 h-40 rounded-full shadow-lg mb-4 lg:mb-0 lg:w-48 lg:h-48">
+          
+          <!-- About Text -->
+          <div>
+            <h1 class="text-4xl font-bold">Olivier Kepler François</h1>
+            <p class="text-lg text-gray-600 mt-4">Computer Science Engineer</p>
+            <p class="mt-4 max-w-lg">Diligent and highly motivated, pursuing a Bachelor's in Computer Science. Passionate about leveraging technical skills to address real-world challenges.</p>
+          </div>
+        </div>
+
+        <!-- Experience Carousel -->
+        <div class="mt-10">
+          <h2 class="text-2xl font-bold mb-4">Experience</h2>
+          <div id="carousel" class="relative flex items-center">
+            <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-300 p-2 rounded-full shadow-lg focus:outline-none hover:bg-gray-400 transition-colors">
+              &lt;
+            </button>
+            <div class="carousel-content flex overflow-hidden space-x-4">
+              <div class="carousel-item active bg-white p-6 rounded-lg shadow-md w-72 text-center">
+                <h3 class="text-xl font-semibold">Massachusetts General Hospital</h3>
+                <p class="text-gray-600 mt-2">Work Control Associate (Jan 2022 - Current)</p>
+                <p class="mt-2">Managed work requests, dispatched maintenance tasks, and maintained inventory systems.</p>
+              </div>
+              <div class="carousel-item bg-white p-6 rounded-lg shadow-md w-72 text-center">
+                <h3 class="text-xl font-semibold">Hope Initiative</h3>
+                <p class="text-gray-600 mt-2">Math Gateway Specialist (Dec 2022 – May 2024)</p>
+                <p class="mt-2">Provided mentoring support, conducted tutoring sessions, and fostered a supportive environment.</p>
+              </div>
+              <div class="carousel-item bg-white p-6 rounded-lg shadow-md w-72 text-center">
+                <h3 class="text-xl font-semibold">Northeastern University (REU)</h3>
+                <p class="text-gray-600 mt-2">Intern (May 2023 - Aug 2023)</p>
+                <p class="mt-2">Conducted urban air quality research, analyzed data, and documented findings.</p>
               </div>
             </div>
-     <!-- Experience Carousel -->
-     <div class="mt-12">
-        <h2 class="text-3xl font-bold mb-4 text-gray-700">Experience</h2>
-        <div id="carousel" class="relative flex items-center space-x-4 overflow-x-auto">
-          
-          <!-- Carousel Items -->
-          <div class="carousel-item active bg-white p-6 rounded-lg shadow-md w-80">
-            <h3 class="text-xl font-semibold text-gray-700">Massachusetts General Hospital</h3>
-            <p class="text-gray-500 mt-2">Work Control Associate (Jan 2022 - Current)</p>
-            <p class="mt-2 text-gray-600">Managed work requests, dispatched maintenance tasks, and maintained inventory systems.</p>
+            <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-300 p-2 rounded-full shadow-lg focus:outline-none hover:bg-gray-400 transition-colors">
+              &gt;
+            </button>
           </div>
-          <div class="carousel-item bg-white p-6 rounded-lg shadow-md w-80">
-            <h3 class="text-xl font-semibold text-gray-700">Hope Initiative</h3>
-            <p class="text-gray-500 mt-2">Math Gateway Specialist (Dec 2022 – May 2024)</p>
-            <p class="mt-2 text-gray-600">Provided mentoring support, conducted tutoring sessions, and fostered a supportive environment.</p>
-          </div>
-          <div class="carousel-item bg-white p-6 rounded-lg shadow-md w-80">
-            <h3 class="text-xl font-semibold text-gray-700">Northeastern University (REU)</h3>
-            <p class="text-gray-500 mt-2">Intern (May 2023 - Aug 2023)</p>
-            <p class="mt-2 text-gray-600">Conducted urban air quality research, analyzed data, and documented findings.</p>
-          </div>
-          
-          <!-- Carousel Controls -->
-          <a id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-300 p-2 rounded-full shadow-lg focus:outline-none hover:bg-gray-400 transition-colors">
-            <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M12.293 15.707a1 1 0 01-1.414 0L5.293 10.707a1 1 0 010-1.414L10.879 3.879a1 1 0 011.415 1.415L7.414 10l5.293 5.293a1 1 0 010 1.414z" clip-rule="evenodd"></path>
-            </svg>
-          </button>
-          <a id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-300 p-2 rounded-full shadow-lg focus:outline-none hover:bg-gray-400 transition-colors">
-            <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M7.707 4.293a1 1 0 010 1.414L3.414 10l4.293 4.293a1 1 0 01-1.415 1.415L.707 10.707a1 1 0 010-1.414L6.293 3.293a1 1 0 011.414 1.414z" clip-rule="evenodd"></path>
-            </svg>
-          </button>
         </div>
-      </div>
-            </div>
-          </section>
-      
-            <!-- About Section -->
-      <section id="about" class="my-10 text-center">
-        <h1 class="text-4xl font-bold">Olivier Kepler François</h1>
-        <p class="text-lg text-gray-600 mt-4">Computer Science Engineer</p>
-        <p class="mt-4">Diligent and highly motivated, pursuing a Bachelor's in Computer Science. Passionate about leveraging technical skills to address real-world challenges.</p>
       </section>
 
       <!-- Projects Section -->
       <section id="projects" class="my-10">
         <h2 class="text-3xl font-bold text-center">Projects</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
-          <!-- Example Project Card -->
-          <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
             <h3 class="text-2xl font-bold">Project Title</h3>
             <p class="mt-2 text-gray-600">Brief description of the project. This can include technologies used and purpose.</p>
             <a href="#" class="text-blue-600 hover:underline mt-4 block">View Project</a>
@@ -149,7 +134,6 @@
     </main>
   </div>
 
-
   <!-- Go to Top Button -->
   <div id="go-to-top" onclick="scrollToTop()">Go to Top</div>
 
@@ -164,11 +148,7 @@
   // Show "Go to Top" button on scroll
   window.onscroll = function() {
     const goToTopButton = document.getElementById("go-to-top");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      goToTopButton.style.display = "block";
-    } else {
-      goToTopButton.style.display = "none";
-    }
+    goToTopButton.style.display = (window.scrollY > 100) ? "block" : "none";
   };
 
   // Smooth scroll to top function
@@ -176,8 +156,8 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-// JavaScript for Carousel
-const items = document.querySelectorAll('.carousel-item');
+  // JavaScript for Carousel
+  const items = document.querySelectorAll('.carousel-item');
   let currentIndex = 0;
 
   document.getElementById('next').addEventListener('click', () => {
@@ -191,6 +171,5 @@ const items = document.querySelectorAll('.carousel-item');
     currentIndex = (currentIndex - 1 + items.length) % items.length;
     items[currentIndex].classList.add('active');
   });
-
 </script>
 </html>
