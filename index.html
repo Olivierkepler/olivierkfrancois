@@ -80,7 +80,27 @@
     
            
           </section>
+<section>
+    <div class="relative w-full max-w-2xl mx-auto">
+        <!-- Carousel Wrapper -->
+        <div id="carousel" class="overflow-hidden relative rounded-lg">
+            <!-- Slides -->
+            <div class="flex transition-transform duration-500 ease-out" id="carousel-slides">
+                <img src="https://via.placeholder.com/600x400" alt="Slide 1" class="w-full flex-shrink-0">
+                <img src="https://via.placeholder.com/600x400/ff0000" alt="Slide 2" class="w-full flex-shrink-0">
+                <img src="https://via.placeholder.com/600x400/00ff00" alt="Slide 3" class="w-full flex-shrink-0">
+            </div>
+        </div>
 
+        <!-- Navigation Arrows -->
+        <a id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 p-3 bg-white rounded-full shadow-md hover:bg-gray-100 focus:outline-none">
+            <svg class="w-6 h-6 text-gray-800" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.707 4.293a1 1 0 010 1.414L6.414 10l4.293 4.293a1 1 0 01-1.414 1.414l-5-5a1 1 0 010-1.414l5-5a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+        </button>
+        <a id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 p-3 bg-white rounded-full shadow-md hover:bg-gray-100 focus:outline-none">
+            <svg class="w-6 h-6 text-gray-800" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M9.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414-1.414L13.586 10 9.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+        </button>
+    </div>
+</section>
        
       
             <!-- About Section -->
@@ -140,5 +160,24 @@
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+
+  const carouselSlides = document.getElementById("carousel-slides");
+        const slides = carouselSlides.children;
+        const totalSlides = slides.length;
+        let currentIndex = 0;
+
+        document.getElementById("next").addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        });
+
+        document.getElementById("prev").addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        });
+
+        function updateCarousel() {
+            carouselSlides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
 </script>
 </html>
