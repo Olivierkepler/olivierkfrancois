@@ -277,7 +277,8 @@
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-800">Web Development</h3>
                     <p class="mt-2 text-gray-600">Professional web development services to build robust, responsive, and visually appealing websites.</p>
-                    <button class="mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button class="mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        onclick="openModal('modal1')">
                         Learn More
                     </button>
                 </div>
@@ -289,7 +290,8 @@
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-800">Mobile App Development</h3>
                     <p class="mt-2 text-gray-600">Custom mobile app solutions tailored to your business needs for both iOS and Android platforms.</p>
-                    <button class="mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button class="mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        onclick="openModal('modal2')">
                         Learn More
                     </button>
                 </div>
@@ -300,50 +302,73 @@
                 <img src="https://via.placeholder.com/400x200" alt="Service 3" class="w-full h-48 object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-800">Digital Marketing</h3>
-                    <p class="mt-2 text-gray-600">Comprehensive digital marketing services to enhance your online presence and attract more customers.</p>
-                    <button class="mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <p class="mt-2 text-gray-600">Enhance your online presence and attract more customers with our marketing solutions.</p>
+                    <button class="mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        onclick="openModal('modal3')">
                         Learn More
                     </button>
                 </div>
             </div>
 
-            <!-- Card 4 -->
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="https://via.placeholder.com/400x200" alt="Service 4" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-800">Graphic Design</h3>
-                    <p class="mt-2 text-gray-600">Creative graphic design services for branding, marketing materials, and digital assets.</p>
-                    <button class="mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        Learn More
-                    </button>
-                </div>
-            </div>
-
-            <!-- Card 5 -->
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="https://via.placeholder.com/400x200" alt="Service 5" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-800">SEO Optimization</h3>
-                    <p class="mt-2 text-gray-600">Optimize your website to improve search engine ranking and drive organic traffic to your business.</p>
-                    <button class="mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        Learn More
-                    </button>
-                </div>
-            </div>
-
-            <!-- Card 6 -->
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="https://via.placeholder.com/400x200" alt="Service 6" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-800">Consulting</h3>
-                    <p class="mt-2 text-gray-600">Expert consulting services to help you achieve your business objectives and overcome challenges.</p>
-                    <button class="mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        Learn More
-                    </button>
-                </div>
-            </div>
+            <!-- Additional Cards (if any) -->
 
         </div>
+    </section>
+
+    <!-- Modals -->
+    <!-- Modal 1 -->
+    <div id="modal1" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
+        <div class="relative w-full max-w-lg p-6 bg-white rounded-lg shadow-lg">
+            <button onclick="closeModal('modal1')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
+                &times;
+            </button>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Web Development</h2>
+            <p class="text-gray-600 mb-6">
+                Our web development services include creating responsive and interactive websites tailored to your needs.
+            </p>
+            <div class="flex justify-end">
+                <button onclick="closeModal('modal1')" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div id="modal2" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
+        <div class="relative w-full max-w-lg p-6 bg-white rounded-lg shadow-lg">
+            <button onclick="closeModal('modal2')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
+                &times;
+            </button>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Mobile App Development</h2>
+            <p class="text-gray-600 mb-6">
+                We develop high-quality mobile apps for both Android and iOS platforms, ensuring seamless performance.
+            </p>
+            <div class="flex justify-end">
+                <button onclick="closeModal('modal2')" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div id="modal3" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
+        <div class="relative w-full max-w-lg p-6 bg-white rounded-lg shadow-lg">
+            <button onclick="closeModal('modal3')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
+                &times;
+            </button>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Digital Marketing</h2>
+            <p class="text-gray-600 mb-6">
+                Our digital marketing strategies will help you reach a wider audience and boost your online presence.
+            </p>
+            <div class="flex justify-end">
+                <button onclick="closeModal('modal3')" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
     </section>
 <!-- form -->
     <section class="bg-gray-100 mt-8 flex items-center justify-center">
@@ -562,5 +587,16 @@ const tabButtons = document.querySelectorAll(".tab-button");
                 successMessage.classList.add('hidden');
             }
         });
+
+        //modal \
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+            document.getElementById(modalId).classList.add('flex');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('flex');
+            document.getElementById(modalId).classList.add('hidden');
+        }
 </script>
 </html>
