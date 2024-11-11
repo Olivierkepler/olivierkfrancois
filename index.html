@@ -879,18 +879,28 @@ const tabButtons = document.querySelectorAll(".tab-button");
         });
     }
 
-    // Initialize the "Show More" button for each tab
-    function initializeShowMoreButton(videoTabName) {
+  // Initialize the "Show More" button for each tab
+  function initializeShowMoreButton(videoTabName) {
         const videoItems = document.querySelectorAll(`#${videoTabName}-videos .video-item`);
-        videoItems.forEach((item, index) => item.classList.toggle('hidden', index >= 3));
+        videoItems.forEach((item, index) => item.classList.toggle('hidden', index >= 4));
+        
         const showMoreBtn = document.getElementById('showMoreBtn');
-        showMoreBtn.classList.toggle('hidden', videoItems.length <= 3);
+        showMoreBtn.classList.toggle('hidden', videoItems.length <= 4);
+        showMoreBtn.textContent = 'Show More';
     }
 
-    // Show more videos when "Show More" button is clicked
-    function showMoreVideos(videoTabName) {
-        document.querySelectorAll(`#${videoTabName}-videos .video-item.hidden`).forEach(item => item.classList.remove('hidden'));
-        document.getElementById('showMoreBtn').classList.add('hidden');
+      // Toggle between showing more or less videos
+      function toggleShowMoreVideos(videoTabName) {
+        const videoItems = document.querySelectorAll(`#${videoTabName}-videos .video-item`);
+        const showMoreBtn = document.getElementById('showMoreBtn');
+
+        if (showMoreBtn.textContent === 'Show More') {
+            videoItems.forEach(item => item.classList.remove('hidden'));
+            showMoreBtn.textContent = 'Show Less';
+        } else {
+            videoItems.forEach((item, index) => item.classList.toggle('hidden', index >= 4));
+            showMoreBtn.textContent = 'Show More';
+        }
     }
 
     // Set default video tab on page load
