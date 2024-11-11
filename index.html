@@ -325,6 +325,8 @@
 
 <!-- tabe  -->
 <section>
+  
+<div class="container mx-auto p-6 sm:p-8 lg:p-12">
     <!-- Section Heading -->
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800">My YouTube Tutorials</h2>
     
@@ -348,10 +350,9 @@
     </div>
 
     <!-- Video Tab Content -->
+    <!-- All Videos Tab -->
     <div id="video-all" class="video-tab-content">
-        <!-- Video Container for "All" tab -->
         <div id="video-all-videos" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <!-- Embedded YouTube Videos go here -->
             <div class="video-item" data-title="Intro to JavaScript">
                 <iframe width="100%" height="200" src="https://www.youtube.com/embed/your_video_id1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <p class="mt-2 font-medium text-center">Intro to JavaScript</p>
@@ -360,11 +361,38 @@
                 <iframe width="100%" height="200" src="https://www.youtube.com/embed/your_video_id2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <p class="mt-2 font-medium text-center">React.js Tutorial</p>
             </div>
-            <!-- Add more video items as needed -->
         </div>
     </div>
 
-    <!-- Additional video tabs (Programming, Web Development, AI & ML) structured similarly to "All" tab go here -->
+    <!-- Programming Tab -->
+    <div id="video-programming" class="video-tab-content hidden">
+        <div id="video-programming-videos" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="video-item" data-title="Intro to JavaScript">
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/your_video_id1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p class="mt-2 font-medium text-center">Intro to JavaScript</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Web Development Tab -->
+    <div id="video-web-development" class="video-tab-content hidden">
+        <div id="video-web-development-videos" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="video-item" data-title="React.js Tutorial">
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/your_video_id2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p class="mt-2 font-medium text-center">React.js Tutorial</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI & ML Tab -->
+    <div id="video-ai-ml" class="video-tab-content hidden">
+        <div id="video-ai-ml-videos" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="video-item" data-title="Machine Learning Basics">
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/your_video_id3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p class="mt-2 font-medium text-center">Machine Learning Basics</p>
+            </div>
+        </div>
+    </div>
 
 </div>
 
@@ -827,6 +855,7 @@ const tabButtons = document.querySelectorAll(".tab-button");
 
     // Set default video tab on page load
     document.addEventListener('DOMContentLoaded', () => openVideoTab('video-all'));
+
 
 
 
