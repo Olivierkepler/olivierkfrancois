@@ -206,34 +206,49 @@
         </div>
       </section>
 
-      <!-- Contact Section -->
-      <section id="contact" class="my-10 text-center">
-       
-
-        <div class="container">
-
-            <form method="post" action="https://script.google.com/macros/s/AKfycbyywTIlWQN4JutmhdLr68sRYM9TsDaEpw8pvQxW3rqXwEb5uU6NXXHFroL80saTod_L/exec"  name="contact-form">
-            
-            <h4>Contact Us</h4>
-            
-            <input type="text" name="your-name" placeholder="Name">
-            
-            <input type="text" name="your-number" placeholder="Number">
-            
-            <input type="email" name="your-email" placeholder="Email">
-            
-            <textarea name="message" rows="7" placeholder="Your Message"></textarea>
-            
-            <input type="submit" value="Submit" id="submit">
-            
-            </form>
-            
+    <section >
+            <!-- Contact Form Container -->
+    <div class="w-full max-w-lg bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Contact Us</h2>
+        
+        <!-- Form Start -->
+        <form id="contactForm" class="space-y-4">
+            <!-- Name Field -->
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-600">Full Name</label>
+                <input type="text" id="name" name="name" required
+                    class="w-full p-3 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
             </div>
-            
-            <script src="Google Sheet.js"></script>
 
+            <!-- Email Field -->
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-600">Email Address</label>
+                <input type="email" id="email" name="email" required
+                    class="w-full p-3 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            </div>
 
-    
+            <!-- Message Field -->
+            <div>
+                <label for="message" class="block text-sm font-medium text-gray-600">Message</label>
+                <textarea id="message" name="message" rows="5" required
+                    class="w-full p-3 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="flex justify-end">
+                <button type="submit" class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    Send Message
+                </button>
+            </div>
+        </form>
+        <!-- Form End -->
+
+        <!-- Success and Error Messages -->
+        <div id="successMessage" class="hidden mt-4 text-green-600 font-semibold">Message sent successfully!</div>
+        <div id="errorMessage" class="hidden mt-4 text-red-600 font-semibold">Error sending message. Please try again.</div>
+    </div>
+
+    <!-- JavaScript for Form Submission -->
     </section>
     </main>
   </div>
@@ -319,5 +334,40 @@ const tabButtons = document.querySelectorAll(".tab-button");
             currentIndex = index;
             updateCarousel();
         }
+
+
+        // google sheet
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzuuTBLLS6ZCSOLYtYhIvuk-O7IG8CLdPuFY4LDVlFodWQ4uxqXxYlU1opCV7MP1jQq/exec';
+        const form = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(scriptURL, {
+                    method: 'POST',
+                    body: new URLSearchParams({
+                        name: formData.get('name'),
+                        email: formData.get('email'),
+                        message: formData.get('message')
+                    })
+                });
+
+                const result = await response.json();
+                if (result.result === 'success') {
+                    successMessage.classList.remove('hidden');
+                    errorMessage.classList.add('hidden');
+                    form.reset();
+                } else {
+                    throw new Error('Failed to submit');
+                }
+            } catch (error) {
+                errorMessage.classList.remove('hidden');
+                successMessage.classList.add('hidden');
+            }
+        });
 </script>
 </html>
