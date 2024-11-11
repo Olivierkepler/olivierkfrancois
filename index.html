@@ -38,6 +38,38 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Animation for modal */
+        .modal-enter {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        .modal-enter-active {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .modal-exit-active {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.3s ease, transform 0.3s ease;}
+            /* modal */
+           /* Animation for modal */
+        .modal-enter {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        .modal-enter-active {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .modal-exit-active {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        } 
+            
   </style>
 </head>
 <body class="bg-gray-100">
@@ -263,9 +295,8 @@
         </div>
       </section> -->
      
-      <!--  card Section -->
-<!-- Card Section -->
-    <section class="bg-gray-100      w-full max-w-6xl p-8">
+      <!-- Card Section -->
+    <section class="w-full max-w-6xl p-8">
         <h2 class="text-3xl font-semibold text-gray-800 mb-8 text-center">Our Services</h2>
         
         <!-- Card Container -->
@@ -278,7 +309,7 @@
                     <h3 class="text-xl font-semibold text-gray-800">Web Development</h3>
                     <p class="mt-2 text-gray-600">Professional web development services to build robust, responsive, and visually appealing websites.</p>
                     <button class="mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        onclick="openModal('modal1')">
+                        onclick="openModal('modal1')" aria-controls="modal1" aria-expanded="false">
                         Learn More
                     </button>
                 </div>
@@ -291,7 +322,7 @@
                     <h3 class="text-xl font-semibold text-gray-800">Mobile App Development</h3>
                     <p class="mt-2 text-gray-600">Custom mobile app solutions tailored to your business needs for both iOS and Android platforms.</p>
                     <button class="mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        onclick="openModal('modal2')">
+                        onclick="openModal('modal2')" aria-controls="modal2" aria-expanded="false">
                         Learn More
                     </button>
                 </div>
@@ -302,9 +333,9 @@
                 <img src="https://via.placeholder.com/400x200" alt="Service 3" class="w-full h-48 object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-800">Digital Marketing</h3>
-                    <p class="mt-2 text-gray-600">Enhance your online presence and attract more customers with our marketing solutions.</p>
+                    <p class="mt-2 text-gray-600">Comprehensive digital marketing services to enhance your online presence and attract more customers.</p>
                     <button class="mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        onclick="openModal('modal3')">
+                        onclick="openModal('modal3')" aria-controls="modal3" aria-expanded="false">
                         Learn More
                     </button>
                 </div>
@@ -317,12 +348,12 @@
 
     <!-- Modals -->
     <!-- Modal 1 -->
-    <div id="modal1" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
-        <div class="relative w-full max-w-lg p-6 bg-white rounded-lg shadow-lg">
-            <button onclick="closeModal('modal1')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
+    <div id="modal1" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50" onclick="closeModal('modal1')" role="dialog" aria-modal="true" aria-labelledby="modal1Title">
+        <div class="relative w-full max-w-lg p-6 bg-white rounded-lg shadow-lg modal-content modal-enter" onclick="event.stopPropagation()">
+            <button onclick="closeModal('modal1')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800" aria-label="Close modal">
                 &times;
             </button>
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Web Development</h2>
+            <h2 id="modal1Title" class="text-2xl font-semibold text-gray-800 mb-4">Web Development</h2>
             <p class="text-gray-600 mb-6">
                 Our web development services include creating responsive and interactive websites tailored to your needs.
             </p>
@@ -335,12 +366,12 @@
     </div>
 
     <!-- Modal 2 -->
-    <div id="modal2" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
-        <div class="relative w-full max-w-lg p-6 bg-white rounded-lg shadow-lg">
-            <button onclick="closeModal('modal2')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
+    <div id="modal2" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50" onclick="closeModal('modal2')" role="dialog" aria-modal="true" aria-labelledby="modal2Title">
+        <div class="relative w-full max-w-lg p-6 bg-white rounded-lg shadow-lg modal-content modal-enter" onclick="event.stopPropagation()">
+            <button onclick="closeModal('modal2')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800" aria-label="Close modal">
                 &times;
             </button>
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Mobile App Development</h2>
+            <h2 id="modal2Title" class="text-2xl font-semibold text-gray-800 mb-4">Mobile App Development</h2>
             <p class="text-gray-600 mb-6">
                 We develop high-quality mobile apps for both Android and iOS platforms, ensuring seamless performance.
             </p>
@@ -353,12 +384,12 @@
     </div>
 
     <!-- Modal 3 -->
-    <div id="modal3" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
-        <div class="relative w-full max-w-lg p-6 bg-white rounded-lg shadow-lg">
-            <button onclick="closeModal('modal3')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
+    <div id="modal3" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50" onclick="closeModal('modal3')" role="dialog" aria-modal="true" aria-labelledby="modal3Title">
+        <div class="relative w-full max-w-lg p-6 bg-white rounded-lg shadow-lg modal-content modal-enter" onclick="event.stopPropagation()">
+            <button onclick="closeModal('modal3')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800" aria-label="Close modal">
                 &times;
             </button>
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Digital Marketing</h2>
+            <h2 id="modal3Title" class="text-2xl font-semibold text-gray-800 mb-4">Digital Marketing</h2>
             <p class="text-gray-600 mb-6">
                 Our digital marketing strategies will help you reach a wider audience and boost your online presence.
             </p>
@@ -369,7 +400,7 @@
             </div>
         </div>
     </div>
-    </section>
+ 
 <!-- form -->
     <section class="bg-gray-100 mt-8 flex items-center justify-center">
             <!-- Contact Form Container -->
@@ -588,15 +619,42 @@ const tabButtons = document.querySelectorAll(".tab-button");
             }
         });
 
-        //modal \
         function openModal(modalId) {
-            document.getElementById(modalId).classList.remove('hidden');
-            document.getElementById(modalId).classList.add('flex');
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+
+            const modalContent = modal.querySelector('.modal-content');
+            modalContent.classList.add('modal-enter-active');
+
+            // Focus on close button for accessibility
+            modal.querySelector('button').focus();
+
+            // Add event listener for Escape key
+            document.addEventListener('keydown', closeOnEscape);
         }
 
         function closeModal(modalId) {
-            document.getElementById(modalId).classList.remove('flex');
-            document.getElementById(modalId).classList.add('hidden');
+            const modal = document.getElementById(modalId);
+            const modalContent = modal.querySelector('.modal-content');
+            modalContent.classList.remove('modal-enter-active');
+            modalContent.classList.add('modal-exit-active');
+
+            setTimeout(() => {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+                modalContent.classList.remove('modal-exit-active');
+            }, 300);
+
+            // Remove Escape key listener
+            document.removeEventListener('keydown', closeOnEscape);
+        }
+
+        function closeOnEscape(event) {
+            if (event.key === "Escape") {
+                const openModal = document.querySelector('.modal-overlay.flex');
+                if (openModal) closeModal(openModal.id);
+            }
         }
 </script>
 </html>
