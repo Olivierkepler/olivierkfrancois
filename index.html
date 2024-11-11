@@ -100,7 +100,7 @@
 
 
   <!-- Main Content with Sidebar -->
-  <div class="container mx-auto flex flex-col lg:flex-row p-4 md:p-0">
+  <div class="container mx-auto flex flex-col lg:flex-row p-4">
     
     <!-- Sidebar -->
     <aside class="hidden lg:block w-1/4  rounded-lg shadow-md">
@@ -215,47 +215,94 @@
               </div>
             </div> -->
   
-          <!-- </section> -->
-          <section class="bg-gray-100 mt-8 flex items-center justify-center ">
-            
-            <div class="w-full max-w-4xl p-8 bg-white rounded-lg shadow-lg">
-                <!-- <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Our Projects</h2> -->
-                
-                <!-- Tab Buttons with Indicator -->
-                <div class="relative">
+            <section class="bg-gray-100 mt-8 flex items-center justify-center">
+                <div class="w-full max-w-4xl p-8 bg-white rounded-lg shadow-lg">
+                  <!-- Tab Buttons with Indicator -->
+                  <div class="relative">
                     <div class="flex border-b border-gray-200 overflow-x-auto">
-                        <button id="tab1-btn" onclick="openTab('tab1')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Overview</button>
-                        <button id="tab2-btn" onclick="openTab('tab2')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Development</button>
-                        <button id="tab3-btn" onclick="openTab('tab3')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Launch</button>
-                        <button id="tab4-btn" onclick="openTab('tab4')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Design</button>
-                        <button id="tab5-btn" onclick="openTab('tab5')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Testing</button>
-                        <button id="tab6-btn" onclick="openTab('tab6')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Maintenance</button>
+                      <button id="tab1-btn" onclick="openTab('tab1')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Summary</button>
+                      <button id="tab2-btn" onclick="openTab('tab2')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Skills</button>
+                      <button id="tab3-btn" onclick="openTab('tab3')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Work Experience</button>
+                      <button id="tab4-btn" onclick="openTab('tab4')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Education</button>
+                      <button id="tab5-btn" onclick="openTab('tab5')" class="tab-button text-gray-600 px-6 py-4 font-medium text-sm transition-colors duration-300 focus:outline-none">Certifications</button>
                     </div>
-                    <!-- Indicator Bar -->
-                    <!-- <div id="tab-indicator" class="absolute bottom-0 left-0 h-1 bg-blue-500 transition-all duration-300" style="width: 16.666%;"></div> -->
+                  </div>
+              
+                  <!-- Tab Content -->
+                  <div id="tab1" class="tab-content mt-8 hidden">
+                    <p class="text-gray-700 leading-relaxed">
+                      Diligent and highly motivated student pursuing a bachelor’s degree in computer science. Holds an associate’s degree in engineering and computer science with a passion for leveraging technical skills to address real-world challenges. Eager to learn new skills and gain hands-on experience.
+                    </p>
+                  </div>
+              
+                  <div id="tab2" class="tab-content mt-8 hidden">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Computer Science Skills</h3>
+                    <ul class="list-disc ml-5 text-gray-700">
+                      <li><strong>C, C++:</strong> Advanced</li>
+                      <li><strong>Java:</strong> Advanced</li>
+                      <li><strong>Python:</strong> Advanced</li>
+                      <li><strong>HTML, CSS:</strong> Advanced</li>
+                      <li><strong>JavaScript:</strong> Proficient</li>
+                      <li><strong>React.js:</strong> Intermediate</li>
+                      <li><strong>MySQL:</strong> Proficient</li>
+                      <li><strong>AWS Amplify:</strong> Advanced</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-4">Engineering Skills</h3>
+                    <ul class="list-disc ml-5 text-gray-700">
+                      <li><strong>AutoCAD:</strong> Proficient</li>
+                      <li><strong>Autodesk:</strong> Proficient</li>
+                      <li><strong>Fusion 360:</strong> Proficient</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-4">Languages</h3>
+                    <ul class="list-disc ml-5 text-gray-700">
+                      <li><strong>English:</strong> Proficient</li>
+                      <li><strong>French:</strong> Advanced</li>
+                      <li><strong>Haitian Creole:</strong> Advanced</li>
+                    </ul>
+                  </div>
+              
+                  <div id="tab3" class="tab-content mt-8 hidden">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Massachusetts General Hospital (MGH) - Work Control Associate</h3>
+                    <p class="text-gray-700">January 2022 - Present</p>
+                    <ul class="list-disc ml-5 text-gray-700 mt-2">
+                      <li>Manage 200 Work Control Center phone calls and process remote work requests.</li>
+                      <li>Dispatch maintenance requests and update inventory control systems.</li>
+                    </ul>
+              
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-4">Hope Initiative - Math Gateway Specialist</h3>
+                    <p class="text-gray-700">December 2022 - May 2024</p>
+                    <ul class="list-disc ml-5 text-gray-700 mt-2">
+                      <li>Provided academic and mentoring support to up to 60 students per semester.</li>
+                      <li>Conducted weekly one-on-one tutoring sessions to address academic gaps.</li>
+                    </ul>
+              
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-4">Northeastern University - Research Intern</h3>
+                    <p class="text-gray-700">May 2023 - August 2023</p>
+                    <ul class="list-disc ml-5 text-gray-700 mt-2">
+                      <li>Conducted research on urban air quality, utilizing Python for data analysis.</li>
+                      <li>Documented and collaborated within a dynamic lab environment.</li>
+                    </ul>
+                  </div>
+              
+                  <div id="tab4" class="tab-content mt-8 hidden">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">University of Massachusetts, Boston</h3>
+                    <p class="text-gray-700">Computer Science BS (Expected Graduation: 2025)</p>
+              
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-4">Bunker Hill Community College</h3>
+                    <p class="text-gray-700">Associate Degree in Engineering and Computer Science (2022 - 2024)</p>
+                  </div>
+              
+                  <div id="tab5" class="tab-content mt-8 hidden">
+                    <ul class="list-disc ml-5 text-gray-700">
+                      <li><strong>BE MASS Competitive Program:</strong> Certificate for outstanding performance in customer service (May 2022 - October 2022)</li>
+                      <li><strong>Immigration Family Service Institute:</strong> Certificate for outstanding performance in web development (May 2021 - December 2022)</li>
+                    </ul>
+                  </div>
                 </div>
-        
-                <!-- Tab Content -->
-                <div id="tab1" class="tab-content mt-8 hidden">
-                    <p class="text-gray-700 leading-relaxed">This section provides an overview of the project, including objectives, scope, and initial planning details.</p>
-                </div>
-                <div id="tab2" class="tab-content mt-8 hidden">
-                    <p class="text-gray-700 leading-relaxed">Here we dive into the development phase, covering the technologies used, challenges faced, and solutions implemented.</p>
-                </div>
-                <div id="tab3" class="tab-content mt-8 hidden">
-                    <p class="text-gray-700 leading-relaxed">This section discusses the launch strategy, rollout plan, and key performance indicators for measuring success post-launch.</p>
-                </div>
-                <div id="tab4" class="tab-content mt-8 hidden">
-                    <p class="text-gray-700 leading-relaxed">The design phase is covered here, where we discuss UI/UX decisions, prototypes, and design iterations.</p>
-                </div>
-                <div id="tab5" class="tab-content mt-8 hidden">
-                    <p class="text-gray-700 leading-relaxed">This section outlines the testing phase, including testing frameworks, QA processes, and performance benchmarks.</p>
-                </div>
-                <div id="tab6" class="tab-content mt-8 hidden">
-                    <p class="text-gray-700 leading-relaxed">Here we cover maintenance plans, post-launch support, and updates to ensure the project remains robust and relevant.</p>
-                </div>
-            </div>
-          </section>
+              </section>
+              
 
 
 
@@ -638,7 +685,7 @@ const tabButtons = document.querySelectorAll(".tab-button");
             const modal = document.getElementById(modalId);
             modal.classList.remove('hidden');
             modal.classList.add('flex');
-
+ 
             const modalContent = modal.querySelector('.modal-content');
             modalContent.classList.add('modal-enter-active');
 
