@@ -71,7 +71,7 @@
         } 
 
         /* tab */
-        .tab-button {
+        .video-tab-button {
             cursor: pointer;
             padding: 10px 20px;
             font-weight: 500;
@@ -79,7 +79,7 @@
             border-color: transparent;
             transition: all 0.3s ease-in-out;
         }
-        .tab-button.active {
+        .video-tab-button.active {
             color: #1d4ed8;
             border-color: #1d4ed8;
         }
@@ -324,8 +324,7 @@
               
 
 <!-- tabe  -->
-
-<div class="container mx-auto p-6 sm:p-8 lg:p-12">
+<section>
     <!-- Section Heading -->
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800">My YouTube Tutorials</h2>
     
@@ -333,25 +332,25 @@
     <div class="flex justify-center mb-8">
         <input 
             type="text" 
-            id="searchBar" 
+            id="videoSearchBar" 
             placeholder="Search tutorials..." 
             class="w-full max-w-lg px-4 py-2 text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            onkeyup="searchVideos()"
+            onkeyup="searchVideoTutorials()"
         >
     </div>
 
-    <!-- Tab Buttons -->
+    <!-- Video Tab Buttons -->
     <div class="flex justify-center space-x-4 border-b border-gray-300 mb-6 overflow-x-auto scrollbar-hide">
-        <button onclick="openTab('all')" id="all-tab" class="tab-button active">All</button>
-        <button onclick="openTab('programming')" id="programming-tab" class="tab-button">Programming</button>
-        <button onclick="openTab('web-development')" id="web-development-tab" class="tab-button">Web Development</button>
-        <button onclick="openTab('ai-ml')" id="ai-ml-tab" class="tab-button">AI & ML</button>
+        <button onclick="openVideoTab('video-all')" id="video-all-tab" class="video-tab-button active">All</button>
+        <button onclick="openVideoTab('video-programming')" id="video-programming-tab" class="video-tab-button">Programming</button>
+        <button onclick="openVideoTab('video-web-development')" id="video-web-development-tab" class="video-tab-button">Web Development</button>
+        <button onclick="openVideoTab('video-ai-ml')" id="video-ai-ml-tab" class="video-tab-button">AI & ML</button>
     </div>
 
-    <!-- Tab Content -->
-    <div id="all" class="tab-content">
+    <!-- Video Tab Content -->
+    <div id="video-all" class="video-tab-content">
         <!-- Video Container for "All" tab -->
-        <div id="all-videos" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div id="video-all-videos" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <!-- Embedded YouTube Videos go here -->
             <div class="video-item" data-title="Intro to JavaScript">
                 <iframe width="100%" height="200" src="https://www.youtube.com/embed/your_video_id1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -365,26 +364,11 @@
         </div>
     </div>
 
-    <!-- pogramming -->
-    <div id="programming" class="tab-content">
-        <!-- Video Container for "All" tab -->
-        <div id="all-videos" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <!-- Embedded YouTube Videos go here -->
-            <div class="video-item" data-title="Intro to JavaScript">
-                <iframe width="100%" height="200" src="https://www.youtube.com/embed/your_video_id1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p class="mt-2 font-medium text-center">Intro to JavaScript</p>
-            </div>
-            <div class="video-item" data-title="React.js Tutorial">
-                <iframe width="100%" height="200" src="https://www.youtube.com/embed/your_video_id2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p class="mt-2 font-medium text-center">React.js Tutorial</p>
-            </div>
-            <!-- Add more video items as needed -->
-        </div>
-    </div>
-    <!-- Add additional tabs (Programming, Web Development, AI & ML) similar to the "all" tab, each containing specific videos for that category -->
+    <!-- Additional video tabs (Programming, Web Development, AI & ML) structured similarly to "All" tab go here -->
 
 </div>
 
+</section>
 
            <!-- About Section -->
 <section id="about" class="my-16 text-center px-4">
@@ -821,28 +805,29 @@ const tabButtons = document.querySelectorAll(".tab-button");
         }
 
         // tab
-         // Function to open the appropriate tab
-    function openTab(tabName) {
-        // Hide all tab contents and remove active class from all buttons
-        document.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
-        document.querySelectorAll('.tab-button').forEach(button => button.classList.remove('active'));
+          // Function to open the appropriate video tab without interfering with other tabs
+    function openVideoTab(videoTabName) {
+        // Hide all video tab contents and remove active class from all buttons
+        document.querySelectorAll('.video-tab-content').forEach(content => content.classList.add('hidden'));
+        document.querySelectorAll('.video-tab-button').forEach(button => button.classList.remove('active'));
 
-        // Show selected tab content and set button as active
-        document.getElementById(tabName).classList.remove('hidden');
-        document.getElementById(`${tabName}-tab`).classList.add('active');
+        // Show selected video tab content and set button as active
+        document.getElementById(videoTabName).classList.remove('hidden');
+        document.getElementById(`${videoTabName}-tab`).classList.add('active');
     }
 
     // Function to filter videos based on search input
-    function searchVideos() {
-        const query = document.getElementById('searchBar').value.toLowerCase();
+    function searchVideoTutorials() {
+        const query = document.getElementById('videoSearchBar').value.toLowerCase();
         document.querySelectorAll('.video-item').forEach(item => {
             const title = item.getAttribute('data-title').toLowerCase();
             item.style.display = title.includes(query) ? '' : 'none';
         });
     }
 
-    // Set default tab on page load
-    document.addEventListener('DOMContentLoaded', () => openTab('all'));
+    // Set default video tab on page load
+    document.addEventListener('DOMContentLoaded', () => openVideoTab('video-all'));
+
 
 
 </script>
