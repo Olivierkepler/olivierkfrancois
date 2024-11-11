@@ -325,78 +325,66 @@
 <!-- tabe  -->
 <section>
     
-<div class="container mx-auto p-6 sm:p-8 lg:p-12">
-    <!-- Section Heading -->
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800">My YouTube Tutorials</h2>
+    <div class="container mx-auto p-6 sm:p-8 lg:p-12">
+        <!-- Section Heading -->
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800">My YouTube Tutorials</h2>
+        
+        <!-- Search Bar -->
+        <div class="flex justify-center mb-8">
+            <input 
+                type="text" 
+                id="videoSearchBar" 
+                placeholder="Search tutorials..." 
+                class="w-full max-w-lg px-4 py-2 text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                onkeyup="searchVideoTutorials()"
+            >
+        </div>
     
-    <!-- Search Bar -->
-    <div class="flex justify-center mb-8">
-        <input 
-            type="text" 
-            id="videoSearchBar" 
-            placeholder="Search tutorials..." 
-            class="w-full max-w-lg px-4 py-2 text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            onkeyup="searchVideoTutorials()"
-        >
-    </div>
-
-    <!-- Video Tab Buttons -->
-    <div class="flex justify-center space-x-4 border-b border-gray-300 mb-6 overflow-x-auto scrollbar-hide">
-        <button onclick="openVideoTab('video-all')" id="video-all-tab" class="video-tab-button active">All</button>
-        <button onclick="openVideoTab('video-programming')" id="video-programming-tab" class="video-tab-button">Programming</button>
-        <button onclick="openVideoTab('video-web-development')" id="video-web-development-tab" class="video-tab-button">Web Development</button>
-        <button onclick="openVideoTab('video-ai-ml')" id="video-ai-ml-tab" class="video-tab-button">AI & ML</button>
-    </div>
-
-    <!-- Video Tab Content -->
-    <div id="video-all" class="video-tab-content">
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" id="video-all-videos">
-            <div class="video-item" data-title="Intro to JavaScript">
-                <iframe width="100%" height="200" src="https://www.youtube.com/embed/your_video_id1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p class="mt-2 font-medium text-center">Intro to JavaScript</p>
-            </div>
-            <div class="video-item" data-title="React.js Tutorial">
-                <iframe width="100%" height="200" src="https://www.youtube.com/embed/your_video_id2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p class="mt-2 font-medium text-center">React.js Tutorial</p>
-            </div>
-            <div class="video-item" data-title="Machine Learning Basics">
-                <iframe width="100%" height="200" src="https://www.youtube.com/embed/your_video_id3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p class="mt-2 font-medium text-center">Machine Learning Basics</p>
-            </div>
+        <!-- Video Tab Buttons -->
+        <div class="flex justify-center space-x-4 border-b border-gray-300 mb-6 overflow-x-auto scrollbar-hide">
+            <button onclick="openVideoTab('video-all')" id="video-all-tab" class="video-tab-button active">All</button>
+            <button onclick="openVideoTab('video-programming')" id="video-programming-tab" class="video-tab-button">Programming</button>
+            <button onclick="openVideoTab('video-web-development')" id="video-web-development-tab" class="video-tab-button">Web Development</button>
+            <button onclick="openVideoTab('video-ai-ml')" id="video-ai-ml-tab" class="video-tab-button">AI & ML</button>
         </div>
-    </div>
-
-    <!-- Programming Tab -->
-    <div id="video-programming" class="video-tab-content hidden">
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" id="video-programming-videos">
-            <div class="video-item" data-title="Intro to JavaScript">
-                <iframe width="100%" height="200" src="https://www.youtube.com/embed/your_video_id1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p class="mt-2 font-medium text-center">Intro to JavaScript</p>
+    
+        <!-- Video Tab Content -->
+        <div id="video-all" class="video-tab-content">
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" id="video-all-videos">
+                <!-- Video Items go here -->
+                <div class="video-item" data-title="Intro to JavaScript">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/your_video_id1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="mt-2 font-medium text-center">Intro to JavaScript</p>
+                </div>
+                <div class="video-item" data-title="React.js Tutorial">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/your_video_id2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="mt-2 font-medium text-center">React.js Tutorial</p>
+                </div>
+                <div class="video-item" data-title="Machine Learning Basics">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/your_video_id3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="mt-2 font-medium text-center">Machine Learning Basics</p>
+                </div>
+                <div class="video-item" data-title="Advanced CSS Tips">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/your_video_id4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="mt-2 font-medium text-center">Advanced CSS Tips</p>
+                </div>
+                <div class="video-item hidden" data-title="Python for Data Science">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/your_video_id5" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="mt-2 font-medium text-center">Python for Data Science</p>
+                </div>
+                <div class="video-item hidden" data-title="Getting Started with Git">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/your_video_id6" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="mt-2 font-medium text-center">Getting Started with Git</p>
+                </div>
             </div>
+            <button id="showMoreBtn" onclick="showMoreVideos('video-all')" class="mt-6 px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none hidden">
+                Show More
+            </button>
         </div>
+    
+        <!-- Additional Video Tabs like "Programming", "Web Development", "AI & ML" structured similarly to "All" tab -->
+    
     </div>
-
-    <!-- Web Development Tab -->
-    <div id="video-web-development" class="video-tab-content hidden">
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" id="video-web-development-videos">
-            <div class="video-item" data-title="React.js Tutorial">
-                <iframe width="100%" height="200" src="https://www.youtube.com/embed/your_video_id2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p class="mt-2 font-medium text-center">React.js Tutorial</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- AI & ML Tab -->
-    <div id="video-ai-ml" class="video-tab-content hidden">
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" id="video-ai-ml-videos">
-            <div class="video-item" data-title="Machine Learning Basics">
-                <iframe width="100%" height="200" src="https://www.youtube.com/embed/your_video_id3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p class="mt-2 font-medium text-center">Machine Learning Basics</p>
-            </div>
-        </div>
-    </div>
-
-</div>
   
 </section>
 
@@ -835,12 +823,29 @@ const tabButtons = document.querySelectorAll(".tab-button");
         }
 
         // tab
- // Function to open the appropriate video tab without interfering with other tabs
+ // Function to open the appropriate video tab
  function openVideoTab(videoTabName) {
         document.querySelectorAll('.video-tab-content').forEach(content => content.classList.add('hidden'));
         document.querySelectorAll('.video-tab-button').forEach(button => button.classList.remove('active'));
         document.getElementById(videoTabName).classList.remove('hidden');
         document.getElementById(`${videoTabName}-tab`).classList.add('active');
+
+        // Show only the first 4 videos and hide the rest initially
+        initializeShowMoreButton(videoTabName);
+    }
+
+    // Initialize the "Show More" button for each tab
+    function initializeShowMoreButton(videoTabName) {
+        const videoItems = document.querySelectorAll(`#${videoTabName}-videos .video-item`);
+        videoItems.forEach((item, index) => item.classList.toggle('hidden', index >= 4));
+        const showMoreBtn = document.getElementById('showMoreBtn');
+        showMoreBtn.classList.toggle('hidden', videoItems.length <= 4);
+    }
+
+    // Show more videos when "Show More" button is clicked
+    function showMoreVideos(videoTabName) {
+        document.querySelectorAll(`#${videoTabName}-videos .video-item.hidden`).forEach(item => item.classList.remove('hidden'));
+        document.getElementById('showMoreBtn').classList.add('hidden');
     }
 
     // Function to filter videos based on search input
@@ -848,17 +853,7 @@ const tabButtons = document.querySelectorAll(".tab-button");
         const query = document.getElementById('videoSearchBar').value.toLowerCase();
         document.querySelectorAll('.video-item').forEach(item => {
             const title = item.getAttribute('data-title').toLowerCase();
-            if (title.includes(query)) {
-                item.style.display = '';
-                item.closest('.video-tab-content').classList.remove('hidden');
-            } else {
-                item.style.display = 'none';
-            }
-        });
-        // Show only relevant video items in active tab and hide empty tabs
-        document.querySelectorAll('.video-tab-content').forEach(tabContent => {
-            const hasVisibleItems = [...tabContent.querySelectorAll('.video-item')].some(item => item.style.display !== 'none');
-            tabContent.classList.toggle('hidden', !hasVisibleItems);
+            item.style.display = title.includes(query) ? '' : 'none';
         });
     }
 
