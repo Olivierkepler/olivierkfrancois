@@ -364,6 +364,9 @@
                 <p class="mt-2 font-medium text-center">Machine Learning Basics</p>
             </div>
         </div>
+        <button id="showMoreBtn" onclick="showMoreVideos('video-all')" class="mt-6 px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none hidden">
+            Show More
+        </button>
     </div>
 
     <!-- Programming Tab -->
@@ -841,6 +844,8 @@ const tabButtons = document.querySelectorAll(".tab-button");
         document.querySelectorAll('.video-tab-button').forEach(button => button.classList.remove('active'));
         document.getElementById(videoTabName).classList.remove('hidden');
         document.getElementById(`${videoTabName}-tab`).classList.add('active');
+        // Show only the first 4 videos and hide the rest initially
+        initializeShowMoreButton(videoTabName);
     }
 
     // Function to filter videos based on search input
@@ -860,6 +865,20 @@ const tabButtons = document.querySelectorAll(".tab-button");
             const hasVisibleItems = [...tabContent.querySelectorAll('.video-item')].some(item => item.style.display !== 'none');
             tabContent.classList.toggle('hidden', !hasVisibleItems);
         });
+    }
+
+    // Initialize the "Show More" button for each tab
+    function initializeShowMoreButton(videoTabName) {
+        const videoItems = document.querySelectorAll(`#${videoTabName}-videos .video-item`);
+        videoItems.forEach((item, index) => item.classList.toggle('hidden', index >= 4));
+        const showMoreBtn = document.getElementById('showMoreBtn');
+        showMoreBtn.classList.toggle('hidden', videoItems.length <= 4);
+    }
+
+    // Show more videos when "Show More" button is clicked
+    function showMoreVideos(videoTabName) {
+        document.querySelectorAll(`#${videoTabName}-videos .video-item.hidden`).forEach(item => item.classList.remove('hidden'));
+        document.getElementById('showMoreBtn').classList.add('hidden');
     }
 
     // Set default video tab on page load
