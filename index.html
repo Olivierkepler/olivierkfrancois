@@ -69,6 +69,19 @@
             transform: scale(0.95);
             transition: opacity 0.3s ease, transform 0.3s ease;
         } 
+
+        /* tab */
+        .tab-button {
+            cursor: pointer;
+            padding: 10px 20px;
+            font-weight: 500;
+            border-bottom-width: 2px;
+            border-color: transparent;
+        }
+        .tab-button.active {
+            color: #1d4ed8;
+            border-color: #1d4ed8;
+        }
             
   </style>
 </head>
@@ -309,6 +322,51 @@
               </section>
               
 
+<!-- tabe  -->
+
+<div class="container mx-auto p-8">
+    <!-- Section Heading -->
+    <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">My YouTube Tutorials</h2>
+    
+    <!-- Search Bar -->
+    <div class="flex justify-center mb-6">
+        <input 
+            type="text" 
+            id="searchBar" 
+            placeholder="Search tutorials..." 
+            class="w-full max-w-lg px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            onkeyup="searchVideos()"
+        >
+    </div>
+
+    <!-- Tab Buttons -->
+    <div class="flex justify-center space-x-4 border-b border-gray-300 mb-4">
+        <button onclick="openTab('all')" id="all-tab" class="tab-button active">All</button>
+        <button onclick="openTab('programming')" id="programming-tab" class="tab-button">Programming</button>
+        <button onclick="openTab('web-development')" id="web-development-tab" class="tab-button">Web Development</button>
+        <button onclick="openTab('ai-ml')" id="ai-ml-tab" class="tab-button">AI & ML</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="all" class="tab-content">
+        <!-- Video Container for "All" tab -->
+        <div id="all-videos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Embedded YouTube Videos go here -->
+            <div class="video-item" data-title="Intro to JavaScript">
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/your_video_id1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p class="mt-2 font-medium">Intro to JavaScript</p>
+            </div>
+            <div class="video-item" data-title="React.js Tutorial">
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/your_video_id2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p class="mt-2 font-medium">React.js Tutorial</p>
+            </div>
+            <!-- Add more video items as needed -->
+        </div>
+    </div>
+
+    <!-- Add additional tabs following the same structure as the "all" tab above, each containing specific videos related to the tab category -->
+
+</div>
 
 
            <!-- About Section -->
@@ -744,5 +802,30 @@ const tabButtons = document.querySelectorAll(".tab-button");
                 if (openModal) closeModal(openModal.id);
             }
         }
+
+        // tabe
+        // Function to open the appropriate tab
+    function openTab(tabName) {
+        // Hide all tab contents and remove active class from all buttons
+        document.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
+        document.querySelectorAll('.tab-button').forEach(button => button.classList.remove('active'));
+
+        // Show selected tab content and set button as active
+        document.getElementById(tabName).classList.remove('hidden');
+        document.getElementById(`${tabName}-tab`).classList.add('active');
+    }
+
+    // Function to filter videos based on search input
+    function searchVideos() {
+        const query = document.getElementById('searchBar').value.toLowerCase();
+        document.querySelectorAll('.video-item').forEach(item => {
+            const title = item.getAttribute('data-title').toLowerCase();
+            item.style.display = title.includes(query) ? '' : 'none';
+        });
+    }
+
+    // Set default tab on page load
+    document.addEventListener('DOMContentLoaded', () => openTab('all'));
+
 </script>
 </html>
